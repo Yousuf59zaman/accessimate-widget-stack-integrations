@@ -11,6 +11,15 @@
 **/coverage/
 **/out/
 
+# Keep source-controlled ASP.NET browser libraries
+!**/wwwroot/lib/**/dist/
+!**/wwwroot/lib/**/dist/**
+
+# .NET build outputs
+**/bin/
+**/obj/
+*.user
+
 # Local framework and deployment state
 **/.cache/
 **/.vercel/
