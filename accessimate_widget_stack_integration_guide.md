@@ -21,10 +21,50 @@ This guide provides step-by-step implementation instructions, copy-paste ready c
 
 ---
 
-## 🚀 Method 1: Global HTML Injection (`src/index.html`) — *Angular, React & Vue 3*
+## 🚀 Method 1: Global HTML Injection (`src/index.html`) — *Angular, React, Vue 3 & Static HTML*
 
 > [!NOTE]
-> **Important Architectural Note**: Next.js, Nuxt 3, Laravel, and ASP.NET Core do **NOT** use a static `src/index.html` file! Next.js uses `app/layout.js` or `pages/_document.js`. Nuxt 3 uses `nuxt.config.ts`. Laravel uses `resources/views/layouts/app.blade.php`. ASP.NET Core uses `Views/Shared/_Layout.cshtml`. For Next.js see **Method 5**. For Nuxt 3 see **Method 6**. For Laravel see **Method 7**. For ASP.NET Core see **Method 8**.
+> **Important Architectural Note**: Next.js, Nuxt 3, Laravel, and ASP.NET Core do **NOT** use a static `src/index.html` file! Next.js uses `app/layout.js` (App Router) or `pages/_document.js` (Pages Router). Nuxt 3 uses `nuxt.config.ts` or `app.vue`. Laravel uses Blade layout files (`resources/views/layouts/app.blade.php`). ASP.NET Core uses Razor layout files (`Views/Shared/_Layout.cshtml`). For Next.js see **Method 5**. For Nuxt 3 see **Method 6**. For Laravel see **Method 7**. For ASP.NET Core see **Method 8**.
+
+### Overview
+Injecting the module script tag directly inside the `<head>` of your application's `index.html` file is the lightest, fastest, and most straightforward method to enable AccessiMate globally across all routes in standard Vite, Create React App, Vue CLI, Angular CLI, and static HTML websites.
+
+### Detailed Step-by-Step Implementation
+
+1. Open your project's main HTML entry point:
+   - **Angular CLI**: `src/index.html`
+   - **Vite React / Vue 3**: `index.html` (in root directory)
+   - **Create React App / Public**: `public/index.html`
+   - **Static Website**: `index.html` (or master template)
+2. Locate the `<head>` tag.
+3. Paste the AccessiMate module script tag inside `<head>`, replacing `data-account` with your valid AccessiMate Account Token.
+4. Save the file. The widget will automatically load on all pages and routes.
+
+### Code Snippet (`src/index.html`)
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AccessiMate Enabled Application</title>
+  
+  <!-- AccessiMate Accessibility Widget Script -->
+  <script type="module" 
+          src="https://dev-script.accessimate.com/js/main.js" 
+          data-account="yUkg0nklTJ3PsHOUOqUsT3HQw1bmfAWq0E1lCcWJ" 
+          defer>
+  </script>
+</head>
+<body>
+  <!-- Root Mounting Container -->
+  <!-- Angular: <app-root></app-root> -->
+  <!-- React / Vue: <div id="root"></div> or <div id="app"></div> -->
+  <div id="root"></div>
+</body>
+</html>
+```
 
 ---
 
