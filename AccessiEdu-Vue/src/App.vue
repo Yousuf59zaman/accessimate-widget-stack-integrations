@@ -9,7 +9,7 @@ onMounted(() => {
   // Dynamically inject AccessiMate Accessibility Widget script inside Vue 3 App component
   injectedScript = document.createElement('script');
   injectedScript.type = 'module';
-  injectedScript.src = 'https://dev-script.accessimate.com/js/main.js';
+  injectedScript.src = 'https://script.accessimate.com/js/main.js';
   injectedScript.setAttribute('data-account', 'y1kqwVdiqVZ9P2KUNwwppmyu225D8mcVSVq2ZehN');
   injectedScript.async = true;
 
