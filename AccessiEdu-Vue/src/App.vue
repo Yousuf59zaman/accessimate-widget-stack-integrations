@@ -10,7 +10,7 @@ onMounted(() => {
   injectedScript = document.createElement('script');
   injectedScript.type = 'module';
   injectedScript.src = 'https://script.accessimate.com/js/main.js';
-  injectedScript.setAttribute('data-account', 'y1kqwVdiqVZ9P2KUNwwppmyu225D8mcVSVq2ZehN');
+  injectedScript.setAttribute('data-account', import.meta.env.VITE_ACCESSIMATE_WIDGET_ACCOUNT ?? 'y1kqwVdiqVZ9P2KUNwwppmyu225D8mcVSVq2ZehN');
   injectedScript.async = true;
 
   document.head.appendChild(injectedScript);
